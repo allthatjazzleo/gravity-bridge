@@ -166,8 +166,7 @@ pub async fn send_messages(
         .await?;
     info!("Sent cosmos transaction: {:?}", response.txhash);
 
-    //Ok(contact.wait_for_tx(response, TIMEOUT).await?)
-    Ok(response)
+    Ok(contact.wait_for_tx(response, TIMEOUT).await?)
 }
 
 pub async fn send_main_loop(
